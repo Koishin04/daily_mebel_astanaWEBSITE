@@ -1,12 +1,14 @@
 'use client';
 
+import React from 'react';
+
 export default function Home() {
   const handleScrollToRequest = () => {
     const el = document.getElementById('request');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     alert('Заявка отправлена! (пока просто алерт 🙂)');
   };
@@ -43,10 +45,12 @@ export default function Home() {
             <span className="hero-label-dot"></span>
             <span>Сборка мебели в Астане за 1 день</span>
           </div>
+
           <h1 className="hero-title">
             Профессиональная сборка и установка мебели{' '}
             <span>с гарантией до 12 месяцев</span>
           </h1>
+
           <p className="hero-subtitle">
             Приезжаем в удобное время, аккуратно собираем и устанавливаем мебель из
             любых магазинов: IKEA, Технодом, Леруа, онлайн-маркетплейсы и др.
@@ -56,6 +60,7 @@ export default function Home() {
             <button className="btn btn-primary" onClick={handleScrollToRequest}>
               Оставить заявку <span>→</span>
             </button>
+
             <button className="btn btn-outline" onClick={handleScrollToRequest}>
               Узнать цену по фото
             </button>
@@ -70,10 +75,12 @@ export default function Home() {
               <div className="hero-stat-main">250+</div>
               <div className="hero-stat-label">собранных кухонь и шкафов</div>
             </div>
+
             <div className="hero-stat">
               <div className="hero-stat-main">4.9★</div>
               <div className="hero-stat-label">средняя оценка клиентов</div>
             </div>
+
             <div className="hero-stat">
               <div className="hero-stat-main">1 день</div>
               <div className="hero-stat-label">срок выезда мастера</div>
@@ -94,10 +101,12 @@ export default function Home() {
               <label htmlFor="name">Имя</label>
               <input id="name" type="text" placeholder="Как к вам обращаться?" required />
             </div>
+
             <div className="field">
               <label htmlFor="phone">Телефон / WhatsApp</label>
               <input id="phone" type="tel" placeholder="+7 ___ ___-__-__" required />
             </div>
+
             <div className="field">
               <label htmlFor="msg">Что нужно собрать?</label>
               <textarea
@@ -110,6 +119,7 @@ export default function Home() {
               <button className="btn btn-primary" type="submit">
                 Отправить заявку
               </button>
+
               <div className="form-hint">
                 Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
               </div>
@@ -127,6 +137,7 @@ export default function Home() {
       <main>
         <section id="services">
           <h2 className="section-title">Наши услуги и ориентировочные цены</h2>
+
           <p className="section-sub">
             Стоимость зависит от сложности мебели. Точный расчёт сделаем по фото или списку
             позиций.
@@ -140,6 +151,7 @@ export default function Home() {
                 С выравниванием дверей, регулировкой фурнитуры и уборкой места работы.
               </div>
             </div>
+
             <div className="service-card">
               <div className="service-title">Сборка кухни</div>
               <div className="service-price">от 25 000 ₸</div>
@@ -147,6 +159,7 @@ export default function Home() {
                 Навеска модулей, установка столешницы, врезка мойки (по согласованию).
               </div>
             </div>
+
             <div className="service-card">
               <div className="service-title">Сборка кроватей и детской мебели</div>
               <div className="service-price">от 8 000 ₸</div>
@@ -154,6 +167,7 @@ export default function Home() {
                 Детские комнаты, двухъярусные кровати, письменные столы.
               </div>
             </div>
+
             <div className="service-card">
               <div className="service-title">Мелкая мебель и аксессуары</div>
               <div className="service-price">от 3 000 ₸</div>
@@ -166,25 +180,27 @@ export default function Home() {
 
         <section id="steps">
           <h2 className="section-title">Как мы работаем</h2>
-          <p className="section-sub">Простой и понятный процесс — от заявки до готовой мебели.</p>
 
           <div className="steps">
             <div>
               <div className="step-num">Шаг 1</div>
               <div>Вы оставляете заявку на сайте или пишете нам в WhatsApp.</div>
             </div>
+
             <div>
               <div className="step-num">Шаг 2</div>
               <div>
                 Мы уточняем детали, просим фото мебели или ссылку на товар и называем точную цену.
               </div>
             </div>
+
             <div>
               <div className="step-num">Шаг 3</div>
               <div>
                 Мастер приезжает в удобное для вас время, аккуратно собирает и устанавливает мебель.
               </div>
             </div>
+
             <div>
               <div className="step-num">Шаг 4</div>
               <div>
@@ -199,6 +215,7 @@ export default function Home() {
               «Ребята за один день собрали кухню и два шкафа. Очень вежливые мастера, всё аккуратно,
               мусор за собой убрали. Теперь рекомендую всем соседям!»
             </div>
+
             <div className="review-tag">Видеоотчёт по запросу · WhatsApp</div>
           </div>
         </section>
@@ -206,9 +223,9 @@ export default function Home() {
 
       <section id="gallery">
         <h2 className="section-title">Наши работы</h2>
+
         <p className="section-sub">
-          Здесь будут реальные фото ваших проектов: кухни, шкафы-купе, гардеробные, детские. Пока
-          можно поставить временные изображения.
+          Здесь будут реальные фото ваших проектов: кухни, шкафы-купе, гардеробные, детские.
         </p>
 
         <div className="gallery-grid">
