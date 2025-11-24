@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# Next.js build
+.next/
+cache/
+next-development.log
+
+# старый вложенный проект (если вдруг появится)
+daily-mebel-astana/
