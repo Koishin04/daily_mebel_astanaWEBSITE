@@ -31,37 +31,32 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    setErrorMessage(null);
+setErrorMessage(null);
 
-    try:
-    {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(form)
-      });
+try {
+  const res = await fetch("/api/lead", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: "",
+      phone: "",
+      furnitureType: "кухня",
+      message: "",
+    }),
+  });
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => null);
-        throw new Error(data?.error || "Ошибка при отправке формы");
-      }
+  if (!res.ok) {
+    throw new Error("Ошибка сервера");
+  }
 
-      setStatus("success");
-      setForm({
-        name: "",
-        phone: "",
-        furnitureType: "Кухня",
-        message: ""
-      });
-    } catch (err: any) {
-      console.error(err);
-      setStatus("error");
-      setErrorMessage(
-        err?.message || "Не удалось отправить заявку. Попробуйте ещё раз."
-      );
-    }
+  setStatus("success");
+} catch (err) {
+  setStatus("error");
+  setErrorMessage("Ошибка отправки. Попробуйте ещё раз.");
+}
+
   };
 
   return (
