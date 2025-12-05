@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image"; // ← импорт логотипа
 
 const navItems = [
   { href: "#services", label: "Услуги" },
@@ -23,9 +24,17 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur">
       <div className="container-main flex h-16 items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-700 text-sm font-bold text-slate-950 shadow-lg shadow-brand-500/40">
-            D
+
+          {/* КРУГЛЫЙ ЛОГОТИП */}
+          <div className="relative h-9 w-9 rounded-full overflow-hidden shadow-lg shadow-brand-500/40">
+            <Image
+              src="/daily-mebel-logo.png"
+              alt="Daily Mebel Astana"
+              fill
+              className="object-cover"
+            />
           </div>
+
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold uppercase tracking-wide">
               daily_mebel_astana
