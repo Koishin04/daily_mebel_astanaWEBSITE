@@ -60,9 +60,21 @@ a {
 /* Кнопки */
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-slate-900
-  shadow-lg shadow-brand-500/40 hover:bg-brand-400 transition-colors;
+  @apply inline-flex items-center justify-center rounded-full px-6 py-2.5 
+    text-sm font-semibold text-slate-950
+    bg-gradient-to-r from-amber-400 to-amber-500
+    shadow-[0_0_35px_rgba(245,158,11,0.55)]
+    transition-transform transition-shadow duration-150 ease-out;
 }
+
+.btn-primary:hover {
+  @apply shadow-[0_0_45px_rgba(245,158,11,0.75)] scale-[1.03];
+}
+
+.btn-primary:active {
+  @apply scale-[0.98] shadow-[0_0_25px_rgba(245,158,11,0.45)];
+}
+
 
 .btn-outline {
   @apply inline-flex items-center justify-center rounded-full border border-slate-600 px-6 py-3 text-sm font-semibold text-slate-100

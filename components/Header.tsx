@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image"; // ← импорт логотипа
+import Image from "next/image";
 
 const navItems = [
   { href: "#services", label: "Услуги" },
@@ -21,12 +21,12 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur">
-      <div className="container-main flex h-16 items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
+    <header className="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-xl">
+      <div className="container-main flex h-14 items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
 
-          {/* КРУГЛЫЙ ЛОГОТИП */}
-          <div className="relative h-9 w-9 rounded-full overflow-hidden shadow-lg shadow-brand-500/40">
+          {/* ЛОГОТИП */}
+          <div className="relative h-9 w-9 rounded-full overflow-hidden ring-2 ring-amber-500/70 ring-offset-2 ring-offset-slate-950 shadow-[0_0_25px_rgba(245,158,11,0.55)]">
             <Image
               src="/daily-mebel-logo.png"
               alt="Daily Mebel Astana"
@@ -36,8 +36,8 @@ export default function Header() {
           </div>
 
           <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold uppercase tracking-wide">
-              daily_mebel_astana
+            <span className="text-sm font-semibold uppercase tracking-[0.16em]">
+              DAILY_MEBEL_ASTANA
             </span>
             <span className="text-xs text-slate-400">
               кухни · шкафы-купе · гардеробные
@@ -50,7 +50,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="hover:text-white transition-colors"
+              className="transition-colors hover:text-white"
             >
               {item.label}
             </Link>

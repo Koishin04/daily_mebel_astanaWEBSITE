@@ -27,29 +27,45 @@ const steps = [
 
 export default function Steps() {
   return (
-    <section id="steps" className="section bg-slate-950">
+    <section id="steps" className="py-16">
       <div className="container-main">
-        <h2 className="section-title">Как мы работаем</h2>
-        <p className="section-subtitle">
-          Прозрачный и понятный процесс от первой заявки до готовой мебели у
-          вас дома.
-        </p>
+        <div className="mb-8 text-center space-y-2">
+          <h2 className="text-3xl font-semibold">Как мы работаем</h2>
+          <p className="text-sm text-slate-400">
+            Прозрачный и понятный процесс от первой заявки до готовой мебели у вас дома.
+          </p>
+        </div>
 
-        <ol className="mt-10 grid gap-6 sm:grid-cols-2">
-          {steps.map((step, index) => (
-            <li key={step.title} className="card flex gap-4 p-5 sm:p-6">
-              <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-brand-500 text-sm font-semibold text-slate-950">
-                {index + 1}
+        <div className="relative max-w-4xl mx-auto">
+          {/* вертикальная линия */}
+          <div className="pointer-events-none absolute left-5 top-0 h-full w-px bg-slate-800/90" />
+
+          <div className="space-y-6">
+            {steps.map((step, index) => (
+              <div
+                key={step.title}
+                className="relative flex gap-4 rounded-3xl border border-slate-800 bg-slate-950/80 px-5 py-4 shadow-[0_18px_35px_rgba(15,23,42,0.9)]"
+              >
+                {/* круг с номером */}
+                <div className="relative z-10 flex flex-none flex-col items-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-500 text-sm font-semibold text-slate-950 shadow-[0_0_24px_rgba(245,158,11,0.75)]">
+                    {index + 1}
+                  </div>
+                </div>
+
+                {/* текст */}
+                <div>
+                  <h3 className="text-sm font-semibold text-slate-50">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1 text-xs text-slate-400">
+                    {step.text}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="mb-1 text-sm font-semibold text-white">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-slate-300">{step.text}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

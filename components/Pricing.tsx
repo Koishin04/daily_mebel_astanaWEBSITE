@@ -48,25 +48,31 @@ export default function Pricing() {
           фурнитуры. Ниже — ориентиры, чтобы понимать порядок цен.
         </p>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 lg:grid-cols-3 items-stretch">
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className={`card flex flex-col p-6 ${
+              className={`card flex h-full flex-col border border-slate-800 bg-slate-950/85 shadow-[0_18px_35px_rgba(15,23,42,0.9)] p-6 ${
                 plan.popular ? "border-brand-500 ring-1 ring-brand-500/40" : ""
               }`}
             >
               {plan.popular && (
-                <div className="mb-3 inline-flex w-fit rounded-full bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300">
+                <div className="mb-3 inline-flex w-fit rounded-full bg-brand-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-brand-300">
                   Самый популярный вариант
                 </div>
               )}
-              <h3 className="mb-2 text-base font-semibold text-white">
-                {plan.name}
-              </h3>
-              <p className="mb-3 text-sm text-brand-400">{plan.price}</p>
-              <p className="mb-4 text-sm text-slate-300">{plan.description}</p>
-              <ul className="mb-4 space-y-2 text-sm text-slate-300">
+
+              <div className="mb-4 space-y-1">
+                <h3 className="text-base font-semibold text-white">
+                  {plan.name}
+                </h3>
+                <p className="text-sm font-semibold text-brand-400">
+                  {plan.price}
+                </p>
+                <p className="text-xs text-slate-300">{plan.description}</p>
+              </div>
+
+              <ul className="flex-1 space-y-2 text-xs text-slate-300">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brand-400" />
@@ -74,8 +80,12 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-auto">
-                <a href="#contacts" className="btn-outline w-full justify-center">
+
+              <div className="mt-5">
+                <a
+                  href="#contacts"
+                  className="btn-outline w-full justify-center rounded-full border-slate-700 text-xs font-semibold text-slate-100 hover:border-brand-400 hover:text-brand-200"
+                >
                   Обсудить проект
                 </a>
               </div>
