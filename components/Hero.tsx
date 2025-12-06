@@ -2,7 +2,7 @@
 
 export default function Hero() {
   const scrollToForm = () => {
-    const el = document.getElementById("lead-form");
+    const el = document.getElementById("contacts"); // было "lead-form"
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }

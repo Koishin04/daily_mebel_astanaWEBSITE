@@ -14,7 +14,7 @@ const navItems = [
 
 export default function Header() {
   const handleScrollToForm = () => {
-    const el = document.getElementById("lead-form");
+    const el = document.getElementById("contacts"); // было "lead-form"
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -24,7 +24,6 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-xl">
       <div className="container-main flex h-14 items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-
           {/* ЛОГОТИП */}
           <div className="relative h-9 w-9 rounded-full overflow-hidden ring-2 ring-amber-500/70 ring-offset-2 ring-offset-slate-950 shadow-[0_0_25px_rgba(245,158,11,0.55)]">
             <Image
@@ -37,7 +36,7 @@ export default function Header() {
 
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold uppercase tracking-[0.16em]">
-              DAILY_MEBEL_ASTANA
+              DAILY MEBEL ASTANA
             </span>
             <span className="text-xs text-slate-400">
               кухни · шкафы-купе · гардеробные
