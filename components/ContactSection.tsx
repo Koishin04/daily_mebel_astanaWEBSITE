@@ -20,7 +20,7 @@ export default function ContactSection() {
 Тип мебели: ${form.type}%0A
 Комментарий: ${form.comment}`;
 
-    const phone = "77760589029"; // <<< НОВЫЙ НОМЕР
+    const phone = "77022748183"; // <<< НОВЫЙ НОМЕР
     const url = `https://wa.me/${phone}?text=${message}`;
 
     window.open(url, "_blank");

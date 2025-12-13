@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             Телефон / WhatsApp:{" "}
             <a
-              href="https://wa.me/77070000000"
+              href="https://wa.me/77022748183"
               target="_blank"
               rel="noreferrer"
               className="text-slate-200 hover:text-brand-300"
