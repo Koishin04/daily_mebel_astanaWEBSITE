@@ -16,7 +16,7 @@ export default function Footer() {
               rel="noreferrer"
               className="text-slate-200 hover:text-brand-300"
             >
-              +7 707 000-00-00
+              +7 702 274-81-83
             </a>
           </div>
           <div>
