@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 
 export default function ContactSection() {
   const [form, setForm] = useState({
@@ -10,18 +10,17 @@ export default function ContactSection() {
     comment: "",
   });
 
-  // === Отправка формы → WhatsApp ===
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const message = `Здравствуйте! Хочу оставить заявку.%0A
-Имя: ${form.name}%0A
-Телефон: ${form.phone}%0A
-Тип мебели: ${form.type}%0A
+    const message = `Здравствуйте! Хочу оставить заявку.\n
+Имя: ${form.name}\n
+Телефон: ${form.phone}\n
+Тип мебели: ${form.type}\n
 Комментарий: ${form.comment}`;
 
-    const phone = "77022748183"; // <<< НОВЫЙ НОМЕР
-    const url = `https://wa.me/${phone}?text=${message}`;
+    const phone = "77022748183";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank");
   };
@@ -80,16 +79,12 @@ export default function ContactSection() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-slate-300">
-                  Имя
-                </label>
+                <label className="text-xs font-medium text-slate-300">Имя</label>
                 <input
                   placeholder="Как к вам обращаться?"
                   className="w-full rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2.5 text-sm text-slate-100"
                   value={form.name}
-                  onChange={(e) =>
-                    setForm({ ...form, name: e.target.value })
-                  }
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
                 />
               </div>
 
@@ -101,9 +96,7 @@ export default function ContactSection() {
                   placeholder="+7 ___ ___-__-__"
                   className="w-full rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2.5 text-sm text-slate-100"
                   value={form.phone}
-                  onChange={(e) =>
-                    setForm({ ...form, phone: e.target.value })
-                  }
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 />
               </div>
             </div>
@@ -115,9 +108,7 @@ export default function ContactSection() {
               <select
                 className="w-full rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2.5 text-sm text-slate-100"
                 value={form.type}
-                onChange={(e) =>
-                  setForm({ ...form, type: e.target.value })
-                }
+                onChange={(e) => setForm({ ...form, type: e.target.value })}
               >
                 <option>Кухня</option>
                 <option>Шкаф-купе</option>
@@ -136,9 +127,7 @@ export default function ContactSection() {
                 placeholder="Например: кухня 3,5 м, потолки 2,7 м, нужна встроенная техника."
                 className="w-full rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2.5 text-sm text-slate-100 resize-none"
                 value={form.comment}
-                onChange={(e) =>
-                  setForm({ ...form, comment: e.target.value })
-                }
+                onChange={(e) => setForm({ ...form, comment: e.target.value })}
               />
             </div>
 
