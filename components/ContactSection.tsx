@@ -45,7 +45,7 @@ export default function ContactSection() {
               <p className="text-xs uppercase tracking-wide text-slate-400">
                 Телефон / WhatsApp
               </p>
-              <p className="font-semibold text-slate-50">+7 776 058 9029</p>
+              <p className="font-semibold text-slate-50">+7 702 274 81 83</p>
               <p className="text-xs text-slate-500">Пн–Сб с 10:00 до 19:00</p>
             </div>
 
